@@ -6,6 +6,7 @@ function renderLicenseBadge(license) {
   }
   // Replace spaces with %20 for URL encoding
   const encodedLicense = license.replace(/ /g, '%20');
+  // Retrieve badge
   return `![License](https://img.shields.io/badge/License-${encodedLicense}-blue.svg)`;
 }
 

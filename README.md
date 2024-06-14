@@ -84,5 +84,4 @@ Built with:
 https://github.com/adamh1223/readme-generator
 
 ## Link to video demonstration
-https://vimeo.com/958589647?share=copy
-password: readme
+https://vimeo.com/958588296
