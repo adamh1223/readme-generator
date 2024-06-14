@@ -4,7 +4,9 @@ function renderLicenseBadge(license) {
   if (license === 'None') {
     return '';
   }
-  return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
+  // Replace spaces with %20 for URL encoding
+  const encodedLicense = license.replace(/ /g, '%20');
+  return `![License](https://img.shields.io/badge/License-${encodedLicense}-blue.svg)`;
 }
 
 // Create a function that returns the license link
@@ -13,7 +15,7 @@ function renderLicenseLink(license) {
   if (license === 'None') {
     return '';
   }
-  return `- [License](#license)`;
+  return `- [License](#license-${license.replace(/ /g, '-').toLowerCase()})`;
 }
 
 // Create a function that returns the license section of README
@@ -31,22 +33,21 @@ This project is licensed under the ${license} license.`;
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## Table of Contents
-
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  ${renderLicenseLink(data.license)}
-
 ${renderLicenseBadge(data.license)}
 
 ## Description
 
 ${data.description}
 
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+${renderLicenseLink(data.license)}
 
 ## Installation
 
