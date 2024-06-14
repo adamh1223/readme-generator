@@ -1,4 +1,3 @@
-# Work Day Scheduler Starter Code
 # Readme Generator
 
 ## Table of Contents

@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+
 // Create an array of questions for user input
 const questions = [
   {
@@ -50,6 +51,11 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'Enter your email address:',
+    validate: (email) => {
+      // Email validation
+      const valid = email.includes('@');
+      return valid || 'Please enter a valid email address';
+    }
   },
 ];
 
